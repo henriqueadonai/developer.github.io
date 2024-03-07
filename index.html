@@ -24,14 +24,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Henrique Developer - 2024 - v4</h1>
+        <h1>Welcome to Henrique Developer - 2024 - v5</h1>
 	    <a id="liveagent_button_online_573DU0000004G9o" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573DU0000004G9o')"></a>
 	    <div id="liveagent_button_offline_573DU0000004G9o" style="display: none;"></div>
 	    <script type="text/javascript">
 if (!window._laq) { window._laq = []; }
 		    console.log('prepare chat');
-window._laq.push(function(){liveagent.showWhenOnline('573DU0000004G9o', document.getElementById('liveagent_button_online_573DU0000004G9o'));
-liveagent.showWhenOffline('573DU0000004G9o', document.getElementById('liveagent_button_offline_573DU0000004G9o'));
+window._laq.push(function(){
+	console.log('show button');
+	liveagent.showWhenOnline('573DU0000004G9o', document.getElementById('liveagent_button_online_573DU0000004G9o'));
+	liveagent.showWhenOffline('573DU0000004G9o', document.getElementById('liveagent_button_offline_573DU0000004G9o'));
 });
 	    </script>
 
