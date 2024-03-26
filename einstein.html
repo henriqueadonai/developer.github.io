@@ -1,24 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Chat</title>
+    <style type='text/css'>
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: #005290;
+            font-family: "Arial", sans-serif;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #005290;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our live chat!</h1>
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true;
+            embedded_svc.settings.language = '';
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
 
-<p>Welcome to Einstein</p>
+            embedded_svc.init(
+                'https://bigvikinggames--evolve.sandbox.my.salesforce.com',
+                'https://bigvikinggames--evolve.sandbox.my.site.com/YoWorld',
+                gslbBaseURL,
+                '00DDU000000sXKv',
+                'VikingChatbot',
+                {
+                    baseLiveAgentContentURL: 'https://c.la2-c1cs-ia7.salesforceliveagent.com/content',
+                    deploymentId: '572DU0000004Fhz',
+                    buttonId: '573DU0000004G9K',
+                    baseLiveAgentURL: 'https://d.la2-c1cs-ia7.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'VikingChatbot',
+                    isOfflineSupportEnabled: false
+                }
+            );
+        };
 
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-
-<script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-			embeddedservice_bootstrap.init(
-				'00DAu000002ocTy',
-				'Viking_V1',
-				'https://bigvikinggames--ecdev.sandbox.my.site.com/ESWVikingV11711044097297',
-				{
-					scrt2URL: 'https://bigvikinggames--ecdev.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://bigvikinggames--ecdev.sandbox.my.site.com/ESWVikingV11711044097297/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://bigvikinggames--evolve.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+    </script>
+</body>
+</html>
