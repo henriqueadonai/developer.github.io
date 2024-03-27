@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to our live chat! Version!</h1>
+    <h1>Welcome to our live chat!</h1>
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
         var initESW = function(gslbBaseURL) {
@@ -43,6 +43,8 @@
                 let typeEle = document.querySelector('.Type');
                 typeEle.value = '';
                 typeEle.dispatchEvent(new Event('change',{'bubbles':!0}));
+                embedded_svc.startChat('Chat with an Expert', '573DU0000004G9K'); // Replace with your button label and ID
+
             });
 
             embedded_svc.init(
