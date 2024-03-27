@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to our live chat!</h1>
+    <h1>Welcome to our live chat! Version!</h1>
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
         var initESW = function(gslbBaseURL) {
@@ -38,6 +38,11 @@
             embedded_svc.addEventHandler("afterMaximize", function(data) {
                 document.querySelector('.FirstName').parentNode.style.display = 'none';
                 document.querySelector('.LastName').parentNode.style.display = 'none';
+                document.querySelector('.Email').parentNode.style.display = 'none';
+                document.querySelector('.Player_Id__c').parentNode.style.display = 'none';
+                let typeEle = document.querySelector('.Type');
+                typeEle.value = '';
+                typeEle.dispatchEvent(new Event('change',{'bubbles':!0}));
             });
 
             embedded_svc.init(
