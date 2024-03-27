@@ -40,9 +40,9 @@
                 document.querySelector('.LastName').parentNode.style.display = 'none';
                 document.querySelector('.Email').parentNode.style.display = 'none';
                 document.querySelector('.Player_Id__c').parentNode.style.display = 'none';
-                let typeEle = document.querySelector('.Type');
-                typeEle.value = '';
-                typeEle.dispatchEvent(new Event('change',{'bubbles':!0}));
+                //let typeEle = document.querySelector('.Type');
+                //typeEle.value = '';
+                //typeEle.dispatchEvent(new Event('change',{'bubbles':!0}));
                 embedded_svc.startChat('Chat with an Expert', '573DU0000004G9K'); // Replace with your button label and ID
 
             });
