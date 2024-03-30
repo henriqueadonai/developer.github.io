@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to our live chat!v1</h1>
+    <h1>Welcome to our live chat! New Fields!</h1>
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
         var initESW = function(gslbBaseURL) {
@@ -27,9 +27,12 @@
                 "FirstName": "John", // replace with actual first name
                 "LastName": "Doe", // replace with actual last name
                 "Email": "john.doe@test.com", // replace with actual email
-                "Game": "YoWorld", // replace with actual game
-                "Player_Id__c": "1234567890", // replace with actual player ID
-                "Language": "English",
+                "Chatbot_Loyalty_Level__c": "Loyalty Level 1", // replace with actual loyalty level
+                "Chatbot_Members_Club__c": "Members Club 1", // replace with actual members club
+                "Chatbot_PlayerId__c": "123456789", // replace with actual player ID
+                "Chatbot_Product_Type__c": "Product Type 1", // replace with actual product type
+                "Chatbot_Subscription_Type__c": "Subscription Type 1", // replace with actual subscription type
+                "Chatbot_VIP_Subscription__c": "VIP Subscription 1", // replace with actual VIP subscription
 
                 // add more fields as needed
             };
@@ -38,10 +41,6 @@
                 document.querySelector('.FirstName').parentNode.style.display = 'none';
                 document.querySelector('.LastName').parentNode.style.display = 'none';
                 document.querySelector('.Email').parentNode.style.display = 'none';
-                document.querySelector('.Player_Id__c').parentNode.style.display = 'none';
-                //let typeEle = document.querySelector('.Type');
-                //typeEle.value = '';
-                //typeEle.dispatchEvent(new Event('change',{'bubbles':!0}));
                 embedded_svc.startChat('Chat with an Expert', '573DU0000004G9K'); // Replace with your button label and ID
 
             });
