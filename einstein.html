@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to our live chat with new Fields! </h1>
+    <h1>Welcome to our live chat! New Fields!</h1>
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>
         var initESW = function(gslbBaseURL) {
@@ -38,9 +38,9 @@
             };
 
             embedded_svc.addEventHandler("afterMaximize", function(data) {
-                //document.querySelector('.FirstName').parentNode.style.display = 'none';
-                //document.querySelector('.LastName').parentNode.style.display = 'none';
-                //document.querySelector('.Email').parentNode.style.display = 'none';
+                document.querySelector('.FirstName').parentNode.style.display = 'none';
+                document.querySelector('.LastName').parentNode.style.display = 'none';
+                document.querySelector('.Email').parentNode.style.display = 'none';
                 //embedded_svc.startChat('Chat with an Expert', '573DU0000004G9K'); // Replace with your button label and ID
 
             });
