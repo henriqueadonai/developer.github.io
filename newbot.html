@@ -14,25 +14,27 @@
 </head>
 <body>
     <h1>Welcome to our live chat!Auto!</h1>
-    <script type='text/javascript'>
+
+    <script type="text/javascript">
         function initEmbeddedMessaging() {
-            try {
-                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-    
-                embeddedservice_bootstrap.init(
-                    '00DDU000000sXKv',
-                    'Big_Viking_Games_Enhanced_Bot',
-                    'https://bigvikinggames--evolve.sandbox.my.site.com/ESWBigVikingGamesEnhan1712021698711',
-                    {
-                        scrt2URL: 'https://bigvikinggames--evolve.sandbox.my.salesforce-scrt.com'
-                    }
-                );
-            } catch (err) {
-                console.error('Error loading Embedded Messaging: ', err);
-            }
+         try {
+          embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+       
+          embeddedservice_bootstrap.init(
+           '00DDU000000sXKv',
+           'Big_Viking_Games_Enhanced_Bot',
+           'https://bigvikinggames--evolve.sandbox.my.site.com/ESWBigVikingGamesEnhan1712021698711',
+           {
+            scrt2URL: 'https://bigvikinggames--evolve.sandbox.my.salesforce-scrt.com'
+           }
+          );
+         } catch (err) {
+          console.error('Error loading Embedded Messaging: ', err);
+         }
         };
-    </script>
-    <script type='text/javascript' src='https://bigvikinggames--evolve.sandbox.my.site.com/ESWBigVikingGamesEnhan1712021698711/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-    
+       </script>
+       <script onload="initEmbeddedMessaging()" src="https://bigvikinggames--evolve.sandbox.my.site.com/ESWBigVikingGamesEnhan1712021698711/assets/js/bootstrap.min.js" type="text/javascript"></script>
+       
 </body>
+
 </html>
