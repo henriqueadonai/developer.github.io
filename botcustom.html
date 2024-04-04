@@ -70,7 +70,7 @@
                     // Finally handler used to perform any clean-up actions
                     // regardless of whether the chat client launches successfully or not.
                     // For example, create a method that logs the user’s attempt to chat.
-                    //logEndUserAttemptToChat();
+                    logEndUserAttemptToChat();
                 });
         }
 
@@ -79,9 +79,9 @@
             button.disabled = true;
         }
 
-        function launchChat() {
+        function logEndUserAttemptToChat() {
             // Log a message
-            console.log('User attempted to start a chat');
+            console.log('log End User Attempt To Chat');
         }
 
     </script>
