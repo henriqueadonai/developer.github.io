@@ -2,15 +2,6 @@
 <html>
 <head>
     <title>Live Chat</title>
-    <style type='text/css'>
-        .embeddedServiceHelpButton .helpButton .uiButton {
-            background-color: #005290;
-            font-family: "Arial", sans-serif;
-        }
-        .embeddedServiceHelpButton .helpButton .uiButton:focus {
-            outline: 1px solid #005290;
-        }
-    </style>
 </head>
 <body>
     <h1>Welcome to our live chat!Auto V1!</h1>
@@ -20,6 +11,26 @@
         function initEmbeddedMessaging() {
             try {
                 embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+                
+                embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true; // Hide the button on the screen
+
+                window.addEventListener("onEmbeddedMessagingReady", () => {
+                    console.log("Received the onEmbeddedMessagingReady event…");
+                
+                    // Send data to Salesforce
+                    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields(
+                        {
+                            "varLoyaltyLevel" : "867-5309",
+                            "varMembersClub" : "11098324",
+                            "varPlayerId" : "1234567890",
+                            "varProductType" : "Game",
+                            "varVIP" : "Yes",
+                            "varVIPSubscriptionType" : "Gold"
+                        });
+                
+                    // Remove any items from the previous list that you don't want to send
+                    //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
+                });
 
                 embeddedservice_bootstrap.init(
                     '00DDU000000sXKv',
@@ -37,7 +48,7 @@
     <script type='text/javascript' src='https://bigvikinggames--evolve.sandbox.my.site.com/ESWhenriqueGitHubbot1712193473308/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
     <p>Create a custom button or invitation to launch the web chat client.</p>
-    <button id="launchChatButton" onclick="launchChat()">Click to contact support</button>
+    <button id="launchChatButton" class="btn btn-primary" onclick="launchChat()">Click to contact support</button>
 
     <p>Call Launch Chat API.</p>
     <script>
