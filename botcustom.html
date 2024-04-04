@@ -34,7 +34,7 @@
             }
         };
     </script>
-    <script type='text/javascript' src='https://bigvikinggames--evolve.sandbox.my.site.com/ESWhenriqueGitHubbot1712193473308/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    <script type='text/javascript' src='https://bigvikinggames--evolve.sandbox.my.site.com/ESWhenriqueGitHubbot1712193473308/assets/js/bootstrap.min.js' ></script>
 
     <p>Create a custom button or invitation to launch the web chat client.</p>
     <button id="launchChatButton" onclick="launchChat()">Click to contact support</button>
@@ -42,6 +42,7 @@
     <p>Call Launch Chat API.</p>
     <script>
         function launchChat() {
+            console.log('launchChat button clicked');
             embeddedservice_bootstrap.utilAPI.launchChat()
                 .then(() => {
                     // Success handler used to perform actions
