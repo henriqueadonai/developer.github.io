@@ -75,9 +75,19 @@
 
     <p>Custom Button - "Need Help" or "Start Troubleshooting" or "Submit a Ticket"</p>
     <button id="launchChatButton" class="btn btn-primary" onclick="launchChat()">Need Help</button>
+    <button id="launchChatButton" class="btn btn-primary" onclick="hideChat()">Hide Chat</button>
+
+
 
     <!-- Call Launch Chat API. -->
     <script>
+
+        function hideChat(){
+            //embeddedservice_bootstrap.utilAPI.showChatButton();
+            embeddedservice_bootstrap.utilAPI.hideChatButton();
+
+        }
+
         function launchChat() {
             console.log('launchChat button clicked');
             embeddedservice_bootstrap.utilAPI.launchChat()
