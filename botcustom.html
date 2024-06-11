@@ -19,10 +19,7 @@
         #launchChatButton:hover {
             background-color: #0069d9;
         }
-
-        .embeddedMessagingConversationButtonWrapper{
-            display: none;
-        }
+        /* CSS to make the chat to the left */
         .embedded-messaging > .embeddedMessagingFrame[class~="isMaximized"] {
             left: 30px !important;
         }
@@ -32,6 +29,14 @@
         .embedded-messaging > .embeddedMessagingFrame[class~="isMinimized"]{
             left: var(--eswButtonRight, 30px);
         }
+        /* Activation Button */
+        .embeddedMessagingConversationButton {
+            background: #062f72ff !important;
+        }
+        /* Bot Footer Button */
+        .submit-button {
+            background: #70b340ff !important
+        }
     </style>
 <head>
     <title>Live Chat</title>
@@ -40,7 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 </head>
 <body>
-    <h1>Welcome to our live chat!Auto V1.2!</h1>
+    <h1>Welcome to our live chat!Auto V1!</h1>
     
     <!-- Without this code, the Messaging for Web client doesn’t load. -->
     <script type='text/javascript'>
@@ -73,8 +78,8 @@
 
                 embeddedservice_bootstrap.init(
                     '00DDU000000sXKv',
-                    'henriqueGitHub_bot',
-                    'https://bigvikinggames--evolve.sandbox.my.site.com/ESWhenriqueGitHubbot1712193473308',
+                    'FishWorldBot',
+                    'https://bigvikinggames--evolve.sandbox.my.site.com/ESWFishWorldBot1712537801118',
                     {
                         scrt2URL: 'https://bigvikinggames--evolve.sandbox.my.salesforce-scrt.com'
                     }
@@ -84,44 +89,31 @@
             }
         };
     </script>
-    <script type='text/javascript' src='https://bigvikinggames--evolve.sandbox.my.site.com/ESWhenriqueGitHubbot1712193473308/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    <script type='text/javascript' src='https://bigvikinggames--evolve.sandbox.my.site.com/ESWFishWorldBot1712537801118/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
     <p>Custom Button - "Need Help" or "Start Troubleshooting" or "Submit a Ticket"</p>
     <button id="launchChatButton" class="btn btn-primary" onclick="launchChat()">Need Help</button>
-    <button id="launchChatButton" class="btn btn-primary" onclick="hideChat()">Hide Chat</button>
-
-
 
     <!-- Call Launch Chat API. -->
     <script>
-
-        function hideChat(){
-            //embeddedservice_bootstrap.utilAPI.showChatButton();
-            embeddedservice_bootstrap.utilAPI.hideChatButton();
-
-        }
-
         function launchChat() {
             console.log('launchChat button clicked');
             embeddedservice_bootstrap.utilAPI.launchChat()
-                .then((l) => {
+                .then(() => {
                     // Success handler used to perform actions
                     // when the chat client launches successfully.
                     // For example, create a method that disables the launch chat button.
-                    console.log('launch the chat',l);
                     disableLaunchChatButton();
-                }).catch((e) => {
+                }).catch(() => {
                     // Error handler used to perform actions
                     // if the chat client fails to launch.
                     // For example, create a method that hides the launch chat button.
                     //hideLaunchChatButton();
-                    console.log('catch error', e);
-                }).finally((f) => {
+                }).finally(() => {
                     // Finally handler used to perform any clean-up actions
                     // regardless of whether the chat client launches successfully or not.
                     // For example, create a method that logs the user’s attempt to chat.
                     //logEndUserAttemptToChat();
-                    console.log('finish chat', f);
                 });
         }
 
