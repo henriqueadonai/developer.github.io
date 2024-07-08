@@ -78,14 +78,13 @@
                 
                     // Send data to Salesforce
                     const currentTime = new Date().toLocaleTimeString();
+                    var formattedEmail = currentTime.getHours() + now.getMinutes() + now.getSeconds() + "@example.com";
+
                     embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields(
                         {
-                            "varEmail" : "varEmail " + currentTime + "@example.com",
+                            "varEmail" : Date().getTime() + "@example.com",
                             "varFirstName" : "varFirstName " + currentTime,
                             "varLastName" : "varLastName " + currentTime,
-                            "inputLastName" : "inputLastName " + currentTime,
-                            "inputFirstName" : "inputFirstName " + currentTime,
-                            "inputEmail" : "inputEmail " + currentTime + "@example.com",
                             "varLoyaltyLevel" : "varLoyaltyLevel " + currentTime,
                             "varMembersClub" : "varMembersClub "  + currentTime,
                             "varPlayerId" : "varPlayerId "  + currentTime,
